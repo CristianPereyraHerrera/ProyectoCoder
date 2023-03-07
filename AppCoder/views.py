@@ -8,8 +8,8 @@ def cursos(request):
 
 
 def estudiantes(request):
-    pass
+    return render(request, "index.html")
 
 
 def profesores(request):
-    pass
+    return render(request, "index.html")
