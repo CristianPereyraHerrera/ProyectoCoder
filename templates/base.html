@@ -20,6 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
+                <a class="navbar-brand" href="{% url 'AppCoderInicio' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'AppCoderCursos' %}">Cursos</a>
                 <a class="navbar-brand" href="{% url 'AppCoderEstudiantes' %}">Estudiantes</a>
                 <a class="navbar-brand" href="{% url 'AppCoderProfesores' %}">Profesores</a>
@@ -28,18 +29,21 @@
             </div>
         </nav>
         <!-- Body-->
-        {% block contenido_cambia %}
+        {% block bloque_uno %}
             <h1>No se encuentra contenido disponible</h1>
         {% endblock %}
 
         <!-- Masthead-->
         <header class="masthead">
+        {% block bloque_dos %}
             <div class="container position-relative">
                 <div class="row justify-content-center">
-                    <div class="col-xl-6">
+                    <div class="col-xl-8">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Bienvenido al curso de Python de Coder!</h1>
+                            <h1 class="mb-5">Bienvenido a Coder!</h1>
+                            <h1 class="mb-5">Registrate y aprende de los mejores cursos!</h1>
+
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -79,7 +83,9 @@
                     </div>
                 </div>
             </div>
+        {% endblock %}
         </header>
+
         <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
             <div class="container">

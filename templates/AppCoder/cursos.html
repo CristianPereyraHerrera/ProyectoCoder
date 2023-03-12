@@ -1,14 +1,59 @@
 {% extends "base.html" %}
 
-{% block contenido_cambia %}
-    <h1>El contenido ha sido modificado</h1>
-    {% if cursos %}
-        {% for curso in cursos %}
-            <p>curso: {{ curso.nombre }}</p>
-            <p>camada: {{ curso.camada }}</p>
-        {% endfor %}
-    {% else %}
-        <h1>No hay cursos en el momento</h1>
-    {% endif %}
+
+{% block bloque_uno %}
+    <h1 class="mb-5">Elige el que más te guste</h1>
+{% endblock %}
+
+
+{% block bloque_dos %}
+
+
+
+    <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h2>Cursos disponibles:</h2>
+                            {% if cursos %}
+                                {% for curso in cursos %}
+                                    <h4><pre>Curso: {{ curso.nombre }}    Camada: {{ curso.camada }}</pre></h4>
+                                    <p></p>
+                                {% endfor %}
+                            {% else %}
+                                <h1>No hay cursos disponibles por momento</h1>
+                            {% endif %}
+                            <!-- Signup form-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- * * SB Forms Contact Form * *-->
+                            <!-- * * * * * * * * * * * * * * *-->
+                            <!-- This form is pre-integrated with SB Forms.-->
+                            <!-- To make this form functional, sign up at-->
+                            <!-- https://startbootstrap.com/solution/contact-forms-->
+                            <!-- to get an API token!-->
+                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
+                                <!-- Email address input-->
+
+                                <!-- Submit success message-->
+                                <!---->
+                                <!-- This is what your users will see when the form-->
+                                <!-- has successfully submitted-->
+
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
 
 {% endblock %}
+
+
+
