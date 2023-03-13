@@ -12,4 +12,6 @@ urlpatterns = [
     path('formulario_estudiante', formulario_estudiante, name="AppCoderFormularioEstudiante"),
     path('formulario_profesor', formulario_profesor, name="AppCoderFormularioProfesor"),
     path('formulario_entregable', formulario_entregable, name="AppCoderFormularioEntregable"),
+    path('busqueda', busqueda, name="AppCoderBusquedaCamada"),
+    path('buscar/', buscar, name="AppCoderResultadoPorBusqueda"),
 ]

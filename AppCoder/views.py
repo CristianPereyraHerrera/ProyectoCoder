@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from AppCoder.models import Curso, Inicio, Entregable, Estudiante, Profesor
 from AppCoder.forms import Formulario_curso, Formulario_entregable, Formulario_estudiante, Formulario_profesor
 
@@ -93,3 +94,25 @@ def formulario_profesor(request):
     else:
         mi_formulario = Formulario_profesor()
     return render(request, "AppCoder/formulario_profesor.html", {"mi_formulario": mi_formulario})
+
+
+def busqueda(request):
+    return render(request, "AppCoder/busqueda.html")
+
+
+def buscar(request):
+    nombre = request.GET.get('nombre')
+    camada = request.GET.get('camada')
+    if not nombre and not camada:
+        respuesta = "No enviaste datos"
+        return HttpResponse(respuesta)
+    cursos = Curso.objects.all()
+    if nombre:
+        cursos = cursos.filter(nombre=nombre)
+    if camada:
+        cursos = cursos.filter(camada=camada)
+    if cursos.exists():
+        return render(request, "AppCoder/resultados_por_busqueda.html", {'cursos': cursos, 'camada': camada})
+    else:
+        respuesta = "No se encontraron resultados"
+        return HttpResponse(respuesta)

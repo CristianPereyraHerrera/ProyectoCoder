@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados por busquedas</title>
+</head>
+<body>
+
+    {% if cursos %}
+        <p>Resultados de la busqueda: {{ cursos.nombre }} {{ cursos.camada }}</p>
+        <ul>
+        {% for curso in cursos %}
+           <p><li> Curso: {{ curso.nombre }} </li>
+            <li> Camada: {{ curso.camada }} </li></p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
